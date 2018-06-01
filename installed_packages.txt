@@ -1,0 +1,5 @@
+npm install --save express
+npm install --save nodemon
+
+//Loggin package
+npm install --save morgan
