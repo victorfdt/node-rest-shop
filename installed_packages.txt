@@ -3,3 +3,6 @@ npm install --save nodemon
 
 //Loggin package
 npm install --save morgan
+
+//Makes easy to work with body parts of the requestes
+npm install --save body-parser
