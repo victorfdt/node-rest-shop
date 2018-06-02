@@ -2,10 +2,15 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 //Routes
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+
+//Connecting to Mongo Atlas
+mongoose.connect(
+    'mongodb+srv://db-shop:' + process.env.MONGO_ATLAS_PW + '@node-rest-shop-5xotr.mongodb.net/test?retryWrites=true');
 
 //Logging feature
 //Morgan will use the next to move to the next middleware
@@ -22,7 +27,7 @@ app.use((req, res, next) => {
         'Origin, X-Requrested-With, Content-Type, Accept', 'Authorization'
     );
 
-    if(req.method === 'OPTIONS'){
+    if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, PATCH, DELETE');
         return res.status(200).json({});
     }
@@ -30,8 +35,6 @@ app.use((req, res, next) => {
     next();
 
 });
-
-
 
 //the method use creates a middleware. So, every incoming
 //requests will have to pass throw it.

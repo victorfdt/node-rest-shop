@@ -6,3 +6,5 @@ npm install --save morgan
 
 //Makes easy to work with body parts of the requestes
 npm install --save body-parser
+
+npm install --save mongoose
