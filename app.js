@@ -10,7 +10,7 @@ const orderRoutes = require('./api/routes/orders');
 
 //Connecting to Mongo Atlas
 mongoose.connect(
-    'mongodb+srv://db-shop:' + process.env.MONGO_ATLAS_PW + '@node-rest-shop-5xotr.mongodb.net/test?retryWrites=true');
+    'mongodb+srv://db-shop:' + process.env.MONGO_ATLAS_PW + '@node-rest-shop-5xotr.mongodb.net/test?retryWrites=false');
 
 //Logging feature
 //Morgan will use the next to move to the next middleware
